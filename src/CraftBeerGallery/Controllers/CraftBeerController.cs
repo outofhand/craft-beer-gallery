@@ -8,9 +8,15 @@ namespace CraftBeerGallery.Controllers
 {
     public class CraftBeerController : Controller
     {
-        public string Detail()
+        public ActionResult Detail()
         {
-            return "Hello!";
+            if (DateTime.Today.DayOfWeek == DayOfWeek.Thursday)
+            {
+                return Redirect("/");
+                //return new RedirectResult("/CraftBeer");
+            }
+
+            return Content("Hello");
         }
     }
 }
