@@ -8,5 +8,9 @@ namespace CraftBeerGallery.Controllers
 {
     public class CraftBeerController : Controller
     {
+        public string Detail()
+        {
+            return "Hello!";
+        }
     }
 }
