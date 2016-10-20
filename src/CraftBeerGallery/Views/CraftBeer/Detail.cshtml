@@ -5,7 +5,7 @@
     var beer = "The Barista";
     var year = "2016";
     var description = "<p><strong>The Barista Breakfast Brown</strong> is crafted with Maris Otter malt, flaked oatmeal, cold brewed espresso, milk sugar and the spirit of angel wings.</p>";
-    var style = new string[]
+    var beerDetails = new string[]
     {
         "style: brown ale",
         "brewdate: 2016",
@@ -29,6 +29,19 @@
 
         <h5>Description:</h5>
         <div>@Html.Raw(description)</div>
+
+        @if (beerDetails.Length > 0)
+        {
+            <h5>Details:</h5>
+            <div>
+                <ul>
+                    @foreach (var detail in beerDetails)
+                    {
+                        <li>@detail</li>
+                    }
+                </ul>
+            </div>
+        }
     </div>
 </body>
 </html>
