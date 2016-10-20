@@ -10,13 +10,7 @@ namespace CraftBeerGallery.Controllers
     {
         public ActionResult Detail()
         {
-            if (DateTime.Today.DayOfWeek == DayOfWeek.Thursday)
-            {
-                return Redirect("/");
-                //return new RedirectResult("/CraftBeer");
-            }
-
-            return Content("Hello");
+            return View();
         }
     }
 }
