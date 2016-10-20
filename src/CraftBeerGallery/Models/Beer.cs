@@ -17,6 +17,26 @@ namespace CraftBeerGallery.Models
         public string Availability { get; set; }
         public Attributes[] BeerAttributes { get; set; }
         public bool Favorite { get; set; }
+
+        public string DisplayText
+        {
+            get
+            {
+                return Brewery + " - " + BeerName;
+            }
+        }
+
+        // brewery-beer.jpg
+        public string BeerImageFileName
+        {
+            get
+            {
+                return Brewery.Replace(" ", "-")
+                    .ToLower() + "-" + BeerName.Replace(" ", "-")
+                    .ToLower() + ".jpg";
+            }
+        }
+
     }
 
 }
