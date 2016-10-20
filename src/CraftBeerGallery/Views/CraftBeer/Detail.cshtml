@@ -1,5 +1,18 @@
 ﻿@{
     Layout = null;
+
+    var brewery = "Clown Shoes";
+    var beer = "The Barista";
+    var year = "2016";
+    var description = "<p><strong>The Barista Breakfast Brown</strong> is crafted with Maris Otter malt, flaked oatmeal, cold brewed espresso, milk sugar and the spirit of angel wings.</p>";
+    var style = new string[]
+    {
+        "style: brown ale",
+        "brewdate: 2016",
+        "brewery: Clown Shoes",
+        "size: 22 Oz Bombers",
+        "availability: available"
+    };
 }
 
 <!DOCTYPE html>
@@ -11,7 +24,11 @@
 </head>
 <body>
     <div>
-        <h1>Hello from the View</h1>
+        <h1>@beer</h1>
+        <h2>@brewery</h2>
+
+        <h5>Description:</h5>
+        <div>@Html.Raw(description)</div>
     </div>
 </body>
 </html>
