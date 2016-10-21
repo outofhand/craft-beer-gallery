@@ -12,7 +12,7 @@ namespace CraftBeerGallery.Models
         public string Brewery { get; set; }
         public string BreweryLocation { get; set; }
         public string Style { get; set; }
-        public int ABV { get; set; }
+        public double ABV { get; set; }
         public string DescriptionHtml { get; set; }
         public string Availability { get; set; }
         public Attributes[] BeerAttributes { get; set; }
