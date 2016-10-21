@@ -5,33 +5,40 @@
     ViewBag.Title = Model.DisplayText;
 }
 
+<h2>@Model.DisplayText</h2>
 
-<h1>@Model.BeerName</h1>
-<h2>@Model.Brewery</h2>
-<h4>@Model.BreweryLocation</h4>
-<p><br /></p>
-<div>
-<h5><strong>Details:</strong></h5>
-<p>Style: @Model.Style<br />
-ABV: @Model.ABV %<br />
-Availability: @Model.Availability</p>
-<h5><strong>Description:</strong></h5>
-<div>@Html.Raw(Model.DescriptionHtml)</div>
-
-@if (Model.BeerAttributes.Length > 0)
-{
-    <h5>Attributes:</h5>
-    <div>
-        <ul>
-            @foreach (var attr in Model.BeerAttributes)
+<div class="row">
+    <div class="col-md-6">
+        <div class="well">
+            <h5><label>Beer Name:</label> @Model.BeerName</h5>
+            <h5><label>Brewery:</label> @Model.Brewery</h5>
+            <h5><label>Brewery Location:</label> @Model.BreweryLocation</h5>
+            <h5><label>Style:</label> @Model.Style</h5>
+            <h5><label>ABV:</label> @Model.ABV %</h5>
+            <h5><label>Availability:</label> @Model.Availability</h5>
+            <h5><label>Favorite:</label> @(Model.Favorite ? "Yes" : "No")</h5>
+            <h5>Description:</h5>@Html.Raw(Model.DescriptionHtml)
+            @if (Model.BeerAttributes.Length > 0)
             {
-                <li>Appearance: @attr.Appearance</li>
-                <li>Smell: @attr.Smell</li>
-                <li>Taste: @attr.Taste</li>
-                <li>Mouthfeel: @attr.Mouthfeel</li>
-                <li>Overall: @attr.Overall</li>
+                <h5>Attributes:</h5>
+                <div>
+                    <ul>
+                        @foreach (var attr in Model.BeerAttributes)
+                        {
+                            <li>Appearance: @attr.Appearance</li>
+                            <li>Smell: @attr.Smell</li>
+                            <li>Taste: @attr.Taste</li>
+                            <li>Mouthfeel: @attr.Mouthfeel</li>
+                            <li>Overall: @attr.Overall</li>
+                        }
+                    </ul>
+                </div>
             }
-        </ul>
+        </div>
+
     </div>
-}
+    <div class="col-md-6">
+        <img src="/Images/@Model.BeerImageFileName"
+             alt="@Model.DisplayText" class="img-responsive" />
+    </div>
 </div>
